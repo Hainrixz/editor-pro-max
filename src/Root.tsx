@@ -15,6 +15,8 @@ import {Testimonial} from "./templates/content/Testimonial";
 // Promo templates
 import {Announcement} from "./templates/promo/Announcement";
 import {BeforeAfterDemo} from "./compositions/BeforeAfterDemo";
+import {MangaOpening} from "./compositions/MangaOpening";
+import {MielCoteDIvoire, mielCoteDIvoireDefaultProps} from "./compositions/MielCoteDIvoire";
 
 // Editing templates
 import {TalkingHeadEdit} from "./templates/editing/TalkingHeadEdit";
@@ -129,6 +131,29 @@ export const RemotionRoot: React.FC = () => {
           fps={30}
           width={1920}
           height={1080}
+        />
+      </Folder>
+
+      <Folder name="Anime">
+        <Composition
+          id="MangaOpening"
+          component={MangaOpening}
+          durationInFrames={430}
+          fps={30}
+          width={1080}
+          height={1920}
+        />
+      </Folder>
+
+      <Folder name="Ads">
+        <Composition
+          id="MielCoteDIvoire"
+          component={MielCoteDIvoire}
+          durationInFrames={810}
+          fps={30}
+          width={1920}
+          height={1080}
+          defaultProps={mielCoteDIvoireDefaultProps}
         />
       </Folder>
 
