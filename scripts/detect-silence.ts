@@ -24,7 +24,7 @@ console.log(`  Noise threshold: ${noiseDb}`);
 console.log(`  Min silence duration: ${minDuration}s`);
 
 // Run FFmpeg silencedetect
-const cmd = `npx remotion ffmpeg -i "${inputPath}" -af "silencedetect=noise=${noiseDb}:d=${minDuration}" -f null - 2>&1`;
+const cmd = `npx remotion ffmpeg -i "${inputPath}" -vn -af "silencedetect=noise=${noiseDb}:d=${minDuration}" -f null - 2>&1`;
 const output = execSync(cmd, {encoding: "utf-8"});
 
 // Parse silence_start and silence_end from stderr
