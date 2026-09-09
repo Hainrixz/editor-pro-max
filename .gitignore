@@ -33,3 +33,12 @@ dist/
 .trae/
 .windsurf/
 .zencoder/
+
+# Whisper.cpp binaries + models (~1.5GB, installed by scripts/transcribe.ts)
+whisper.cpp/
+
+# Pipeline artifacts (regenerated from source media by scripts/)
+public/assets/
+public/captions.json
+public/silence.json
+public/video-metadata.json
