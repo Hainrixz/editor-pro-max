@@ -44,14 +44,18 @@ echo "Platform: ${PLATFORM}"
 echo "Output: ${OUTPUT_FILE}"
 echo ""
 
-CMD="npx remotion render ${COMP_ID} ${OUTPUT_FILE}"
+CMD=(npx remotion render "${COMP_ID}" "${OUTPUT_FILE}")
 
 if [ -n "$WIDTH" ]; then
-  CMD="${CMD} --width ${WIDTH} --height ${HEIGHT}"
+  CMD+=(--width "${WIDTH}" --height "${HEIGHT}")
 fi
 
-echo "Running: ${CMD}"
-eval $CMD
+# A bash array + direct invocation (no eval) means each argument is passed
+# through exactly once and never re-parsed by a shell — a COMP_ID like
+# `Showcase; rm -rf ~` stays a single literal argument instead of being
+# able to inject and run a second command.
+echo "Running: ${CMD[@]}"
+"${CMD[@]}"
 
 echo ""
 echo "Done! Output: ${OUTPUT_FILE}"

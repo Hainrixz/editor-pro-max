@@ -4,7 +4,7 @@
  * Usage: npx tsx scripts/detect-silence.ts public/assets/video.mp4 [noise-db] [min-duration]
  * Output: public/silence.json
  */
-import {execSync} from "child_process";
+import {spawnSync} from "child_process";
 import {writeFileSync} from "fs";
 import path from "path";
 
@@ -23,9 +23,17 @@ console.log(`Detecting silence in: ${inputPath}`);
 console.log(`  Noise threshold: ${noiseDb}`);
 console.log(`  Min silence duration: ${minDuration}s`);
 
-// Run FFmpeg silencedetect
-const cmd = `npx remotion ffmpeg -i "${inputPath}" -af "silencedetect=noise=${noiseDb}:d=${minDuration}" -f null - 2>&1`;
-const output = execSync(cmd, {encoding: "utf-8"});
+// spawnSync with an argv array never invokes a shell, so a crafted
+// filename or noise/duration argument can't break out and run arbitrary
+// commands the way the previous execSync(`...${inputPath}...`) shell-string
+// version could. ffmpeg's silencedetect logs to stderr, so both streams
+// are captured and combined the way the old `2>&1` shell redirect did.
+const proc = spawnSync(
+  "npx",
+  ["remotion", "ffmpeg", "-i", inputPath, "-af", `silencedetect=noise=${noiseDb}:d=${minDuration}`, "-f", "null", "-"],
+  {encoding: "utf-8"},
+);
+const output = (proc.stdout || "") + (proc.stderr || "");
 
 // Parse silence_start and silence_end from stderr
 const silenceSegments: Array<{start: number; end: number}> = [];

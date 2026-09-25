@@ -33,3 +33,6 @@ dist/
 .trae/
 .windsurf/
 .zencoder/
+
+# Claude Code (may store credentials, auth tokens, or private artifacts)
+.claude/

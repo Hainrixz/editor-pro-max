@@ -11,5 +11,5 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true
   },
-  "exclude": ["remotion.config.ts", "skills", ".agents"]
+  "exclude": ["remotion.config.ts", "skills", ".agents", "agent"]
 }

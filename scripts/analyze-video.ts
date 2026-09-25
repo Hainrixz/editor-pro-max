@@ -4,7 +4,7 @@
  * Usage: npx tsx scripts/analyze-video.ts public/assets/video.mp4
  * Output: public/video-metadata.json
  */
-import {execSync} from "child_process";
+import {execFileSync} from "child_process";
 import {writeFileSync} from "fs";
 import path from "path";
 
@@ -16,20 +16,36 @@ if (!inputPath) {
 
 console.log(`Analyzing: ${inputPath}`);
 
-// Use ffprobe to extract metadata
-const ffprobeCmd = `npx remotion ffprobe -v quiet -print_format json -show_format -show_streams "${inputPath}"`;
-const output = execSync(ffprobeCmd, {encoding: "utf-8"});
+// execFileSync with an argv array never invokes a shell, so a crafted
+// filename (e.g. `x.mp4" & someCommand & echo "`) can't break out and run
+// arbitrary commands the way the previous execSync(`...${inputPath}...`)
+// shell-string version could.
+const output = execFileSync(
+  "npx",
+  ["remotion", "ffprobe", "-v", "quiet", "-print_format", "json", "-show_format", "-show_streams", inputPath],
+  {encoding: "utf-8"},
+);
 const probe = JSON.parse(output);
 
 const videoStream = probe.streams?.find((s: any) => s.codec_type === "video");
 const audioStream = probe.streams?.find((s: any) => s.codec_type === "audio");
+
+// r_frame_rate is a "num/den" fraction (e.g. "30/1", "24000/1001") coming
+// straight from ffprobe's parse of the file's own container metadata —
+// i.e. untrusted, attacker-influenceable input. eval()-ing it executed
+// that string as JavaScript; parsing the fraction by hand removes the
+// code-execution path entirely.
+const parseFrameRate = (rate: string): number => {
+  const [num, den] = rate.split("/").map(Number);
+  return den ? num / den : num;
+};
 
 const metadata = {
   duration: parseFloat(probe.format?.duration || "0"),
   width: videoStream?.width || 0,
   height: videoStream?.height || 0,
   fps: videoStream?.r_frame_rate
-    ? eval(videoStream.r_frame_rate)
+    ? parseFrameRate(videoStream.r_frame_rate)
     : 30,
   videoCodec: videoStream?.codec_name || "unknown",
   audioCodec: audioStream?.codec_name || "none",

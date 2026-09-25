@@ -1,0 +1,24 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "weather-api",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "weather-api", "start"],
+      "port": 3001
+    },
+    {
+      "name": "motion-framer-starter",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", ".claude/skills/motion-framer/assets/starter_motion", "run", "dev", "--", "--port", "3002"],
+      "port": 3002
+    }
+  ]
+}
