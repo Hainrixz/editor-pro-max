@@ -1,4 +1,7 @@
 #!/usr/bin/env npx tsx
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 /**
  * Transcribe audio using Whisper.cpp with word-level timestamps.
  * Usage: npx tsx scripts/transcribe.ts [audio-path]

@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 export const PALETTES = {
   dark: {
     bg: "#0a0a0a",

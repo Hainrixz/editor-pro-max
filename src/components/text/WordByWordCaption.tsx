@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 import React from "react";
 import {useCurrentFrame} from "remotion";
 import {FONT_FAMILIES, loadGoogleFont} from "../../presets/fonts";

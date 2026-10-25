@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 import {useState, useEffect, useMemo} from "react";
 import {staticFile, delayRender, continueRender, cancelRender} from "remotion";
 import {

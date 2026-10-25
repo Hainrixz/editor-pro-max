@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 import {AbsoluteFill, Sequence} from "remotion";
 import {AnimatedTitle} from "../components/text/AnimatedTitle";
 import {LowerThird} from "../components/text/LowerThird";

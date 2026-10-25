@@ -253,7 +253,7 @@ def interactive_mode():
 
 
 def main():
-    parser = argparse.ArgumentParser(
+    parser = argparse.ArgumentParser(epilog='Hecho por Enrique Rocha (@soyenriquerocha) · tododeia.com', 
         description="Generate component prop configurations"
     )
     parser.add_argument(

@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+# SPDX-License-Identifier: MIT
+# id: er-be2c9690
 # Editor Pro Max - Batch Render
 # Renders a composition for multiple platforms at once
 #

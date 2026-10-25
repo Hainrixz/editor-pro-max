@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 import {fade} from "@remotion/transitions/fade";
 import {slide} from "@remotion/transitions/slide";
 import {wipe} from "@remotion/transitions/wipe";

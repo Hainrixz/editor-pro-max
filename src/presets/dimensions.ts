@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 export const PLATFORMS = {
   tiktok: {width: 1080, height: 1920, fps: 30, name: "TikTok"},
   instagram_reel: {width: 1080, height: 1920, fps: 30, name: "Instagram Reel"},

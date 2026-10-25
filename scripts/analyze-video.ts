@@ -1,4 +1,7 @@
 #!/usr/bin/env npx tsx
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 /**
  * Analyze a video file and extract metadata.
  * Usage: npx tsx scripts/analyze-video.ts public/assets/video.mp4

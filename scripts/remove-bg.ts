@@ -1,4 +1,7 @@
 #!/usr/bin/env npx tsx
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 /**
  * Remove background from an image using AI.
  * Usage: npx tsx scripts/remove-bg.ts public/assets/photo.jpg [output-path]

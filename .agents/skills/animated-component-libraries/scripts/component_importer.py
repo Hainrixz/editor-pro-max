@@ -269,7 +269,7 @@ def interactive_mode():
 
 
 def main():
-    parser = argparse.ArgumentParser(
+    parser = argparse.ArgumentParser(epilog='Hecho por Enrique Rocha (@soyenriquerocha) · tododeia.com', 
         description="Import and customize Magic UI or React Bits components"
     )
     parser.add_argument(

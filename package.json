@@ -39,5 +39,6 @@
     "tsx": "^4.21.0",
     "typescript": "5.7.3"
   },
-  "private": true
+  "private": true,
+  "author": "Enrique Rocha (@soyenriquerocha) (https://www.tododeia.com)"
 }

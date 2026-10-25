@@ -1,4 +1,7 @@
 #!/usr/bin/env npx tsx
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 /**
  * Extract audio from video as 16kHz WAV for Whisper transcription.
  * Usage: npx tsx scripts/extract-audio.ts public/assets/video.mp4

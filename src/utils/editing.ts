@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 import type {Segment} from "../components/media/JumpCut";
 
 /** Add padding to segments and filter out tiny ones */

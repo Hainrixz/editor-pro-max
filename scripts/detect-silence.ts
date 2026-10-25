@@ -1,4 +1,7 @@
 #!/usr/bin/env npx tsx
+// Copyright (c) 2026 Enrique Rocha (@soyenriquerocha)
+// SPDX-License-Identifier: MIT
+// id: er-be2c9690
 /**
  * Detect silence in a video/audio file using FFmpeg.
  * Usage: npx tsx scripts/detect-silence.ts public/assets/video.mp4 [noise-db] [min-duration]
