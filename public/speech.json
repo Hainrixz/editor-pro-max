@@ -1,0 +1,100 @@
+{
+ "nebraska01": {
+  "originalDuration": 26.609,
+  "keptDuration": 19.9,
+  "segments": [
+   {
+    "startSeconds": 0.9,
+    "endSeconds": 9.1
+   },
+   {
+    "startSeconds": 11.7,
+    "endSeconds": 14.2
+   },
+   {
+    "startSeconds": 14.8,
+    "endSeconds": 16.0
+   },
+   {
+    "startSeconds": 16.7,
+    "endSeconds": 23.1
+   },
+   {
+    "startSeconds": 23.9,
+    "endSeconds": 25.5
+   }
+  ]
+ },
+ "nebraska02": {
+  "originalDuration": 82.847,
+  "keptDuration": 36.3,
+  "segments": [
+   {
+    "startSeconds": 0.4,
+    "endSeconds": 4.4
+   },
+   {
+    "startSeconds": 5.7,
+    "endSeconds": 8.4
+   },
+   {
+    "startSeconds": 14.7,
+    "endSeconds": 16.9
+   },
+   {
+    "startSeconds": 18.8,
+    "endSeconds": 23.0
+   },
+   {
+    "startSeconds": 24.0,
+    "endSeconds": 25.6
+   },
+   {
+    "startSeconds": 31.2,
+    "endSeconds": 33.8
+   },
+   {
+    "startSeconds": 36.1,
+    "endSeconds": 37.5
+   },
+   {
+    "startSeconds": 44.4,
+    "endSeconds": 45.3
+   },
+   {
+    "startSeconds": 46.5,
+    "endSeconds": 47.4
+   },
+   {
+    "startSeconds": 50.8,
+    "endSeconds": 54.4
+   },
+   {
+    "startSeconds": 55.7,
+    "endSeconds": 56.8
+   },
+   {
+    "startSeconds": 60.5,
+    "endSeconds": 62.9
+   },
+   {
+    "startSeconds": 63.8,
+    "endSeconds": 69.4
+   },
+   {
+    "startSeconds": 76.1,
+    "endSeconds": 79.2
+   }
+  ]
+ },
+ "nebraska03": {
+  "originalDuration": 8.404,
+  "keptDuration": 7.6,
+  "segments": [
+   {
+    "startSeconds": 0.4,
+    "endSeconds": 8.0
+   }
+  ]
+ }
+}
